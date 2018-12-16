@@ -1,0 +1,26 @@
+{
+    "name": "vaporlang",
+    "publisher": "minkcv",
+    "displayName": "vaporlang",
+    "description": "Vaporlang language support. See https://github.com/minkcv/vm for more info.",
+    "version": "0.0.3",
+    "engines": {
+        "vscode": "^1.30.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "vaporlang",
+            "aliases": ["vaporlang", "vaporlang"],
+            "extensions": [".vapor"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "vaporlang",
+            "scopeName": "source.vapor",
+            "path": "./syntaxes/vaporlang.tmLanguage.json"
+        }]
+    }
+}
