@@ -3,7 +3,7 @@
     "publisher": "minkcv",
     "displayName": "vaporlang",
     "description": "Vaporlang language support. See https://github.com/minkcv/vm for more info.",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "repository": {"type": "git", "url": "https://github.com/minkcv/vaporlang-vscode"},
     "engines": {
         "vscode": "^1.30.0"

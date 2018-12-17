@@ -1,32 +1,40 @@
 {
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "vaporlang",
-	"patterns": [
-		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#strings"
-		}
-	],
-	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.vaporlang",
-				"match": "\\b(if|while|return|call|halt|break|var|const|func)\\b"
-			}]
-		},
-		"strings": {
-			"name": "string.quoted.double.vaporlang",
-			"begin": "\"",
-			"end": "\"",
-			"patterns": [
-				{
-					"name": "constant.character.escape.vaporlang",
-					"match": "\\\\."
-				}
-			]
-		}
-	},
-	"scopeName": "source.vapor"
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "vaporlang",
+    "patterns": [
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#constant"
+        }
+    ],
+    "repository": {
+        "keywords": {
+            "patterns": [{
+                "name": "keyword.control.vaporlang",
+                "match": "\\b(if|while|return|call|halt|break|var|const|func)\\b"
+            }]
+        },
+        "constant": {
+            "patterns": [{
+                "name": "constant.numeric.hex.vaporlang",
+                "match": "\\b(?<!\\$)0(?:x|X)[0-9a-fA-F][0-9a-fA-F_]*(n)?\\b(?!\\$)"
+            },
+            {
+                "name": "constant.numeric.byte.vaporlang",
+                "match": "\\b([0-9]+)(;|\\b)"
+            }]
+        },
+        "comment": {
+            "patterns": [{
+                "name": "comment.vaporlang",
+                "match": "(?![\n\r])\\s?\/\/.*?$"
+            }]
+        }
+    },
+    "scopeName": "source.vapor"
 }
